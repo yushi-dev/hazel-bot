@@ -1,5 +1,5 @@
 {
-  "name": "hazel",
+  "name": "hazel-bot",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
@@ -18,11 +18,11 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yoeshie/hazel.git"
+    "url": "git+https://github.com/yushi-dev/hazel-bot.git"
   },
   "bugs": {
-    "url": "https://github.com/yoeshie/hazel/issues"
+    "url": "https://github.com/yushi-dev/hazel-bot/issues"
   },
-  "homepage": "https://github.com/yoeshie/hazel#readme",
-  "description": ""
+  "homepage": "https://github.com/yushi-dev/hazel-bot#readme",
+  "description": "a personal discord bot"
 }
