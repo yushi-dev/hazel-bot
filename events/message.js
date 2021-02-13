@@ -15,6 +15,6 @@ module.exports = (client) => {
 
         if (!command) return;
 
-        command.run({ client, msg, args: args.slice(1) });
+        command.run({ client, msg, args });
     });
 };

@@ -17,13 +17,13 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setColor("#c58c7d")
-            .setImage(Util.getRandomArrayItem(hugs));
+            .setImage(Util.getRandomArrayElement(hugs));
 
-        const desc = msg.mentions.has(msg.author) ?
+        const description = msg.mentions.has(msg.author) ?
             `aw, here's a hug! ${msg.author}` :
             `aw, ${msg.author} has hugged ${mentions.join(", ")}`;
 
-        embed.setDescription(desc);
+        embed.setDescription(description);
 
         msg.channel.send(embed);
     },

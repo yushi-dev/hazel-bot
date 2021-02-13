@@ -13,11 +13,11 @@ module.exports = {
             .setColor("#c58c7d")
             .setImage(Util.getRandomArrayElement(blush));
 
-        if (!args.length || msg.mentions.has(msg.author)) {
-            embed.setDescription(`eek, ${msg.author} has blushed-`);
-        } else {
-            embed.setDescription(`aw, ${msg.author} has blushed towards ${mentions.join(", ")}`);
-        }
+        const description = (!args.length || msg.mentions.has(msg.author)) ?
+            `eek, ${msg.author} has blushed-` :
+            `aw, ${msg.author} has blushed towards ${mentions.join(", ")}`;
+
+        embed.setDescription(description);
 
         msg.channel.send(embed);
     },
