@@ -11,7 +11,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setColor("#c58c7d")
-            .setImage(Util.getRandomArrayItem(blush));
+            .setImage(Util.getRandomArrayElement(blush));
 
         if (!args.length || msg.mentions.has(msg.author)) {
             embed.setDescription(`eek, ${msg.author} has blushed-`);

@@ -1,5 +1,5 @@
 module.exports = class {
-    static getRandomArrayItem(arr) {
+    static getRandomArrayElement(arr) {
         return arr[Math.floor(Math.random() * arr.length)];
     }
 };

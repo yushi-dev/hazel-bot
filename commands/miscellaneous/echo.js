@@ -7,6 +7,6 @@ module.exports = {
     aliases: ["say"],
     description: "repeats a given message",
     run({ msg, args }) {
-        msg.channel.send(args.join(" ") || Util.getRandomArrayItem(echo));
+        msg.channel.send(args.join(" ") || Util.getRandomArrayElement(echo));
     },
 };
