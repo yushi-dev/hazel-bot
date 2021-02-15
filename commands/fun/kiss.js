@@ -5,7 +5,7 @@ const { kiss } = require("../../assets/json/images.json");
 const { error } = require("../../assets/json/replies.json");
 
 module.exports = {
-    name: "hug",
+    name: "kiss",
     aliases: ["cuddle", "snuggle"],
     run({ msg }) {
         const mentions = msg.mentions.users.first(5);

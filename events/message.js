@@ -7,9 +7,13 @@ module.exports = (client) => {
         };
 
         const args = msg.content.slice(prefix.length).split(/ +/);
-        const command = args.shift().toLowerCase();
+        const file = args.shift().toLowerCase();
 
-        if (client.commands.get(command) || client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(command))) {
+        const command =
+            client.commands.get(file) ||
+            client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(file));
+
+        if (command) {
             command.run({ client, msg, args });
         };
     });
