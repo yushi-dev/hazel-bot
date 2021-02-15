@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
-const Util = require("../../util/functions");
+const Util = require("../../util/Util");
 
-const { hugs } = require("../../assets/json/images.json");
+const { kiss } = require("../../assets/json/images.json");
 const { error } = require("../../assets/json/replies.json");
 
 module.exports = {
@@ -18,14 +18,15 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setColor("#c58c7d")
-            .setImage(Util.getRandomArrayElement(hugs));
+            .setImage(Util.getRandomArrayElement(kiss));
 
         const description = msg.mentions.has(msg.author) ?
-            `aw, here's a hug! ${msg.author}` :
-            `aw, ${msg.author} has hugged ${mentions.join(", ")}`;
+            `um, ${msg.author} has kissed themselves?` :
+            `woah, ${msg.author} has kissed ${mentions.join(", ")}`;
 
         embed.setDescription(description);
 
         msg.channel.send(embed);
     },
 };
+
