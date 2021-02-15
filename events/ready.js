@@ -3,7 +3,7 @@ module.exports = (client) => {
         console.log("client is online");
 
         client.user.setPresence({
-            status: "idle",
+            status: "online",
             activity: {
                 name: "this silly code~",
                 type: "WATCHING",
