@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const Util = require("../../util/Util");
+const Util = require("../../util/functions");
 
 const { blush } = require("../../assets/json/images.json");
 
