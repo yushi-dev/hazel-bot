@@ -1,4 +1,4 @@
-const Util = require("../../util/Util");
+const Util = require("../../util/functions");
 
 const { echo } = require("../../assets/json/replies.json");
 
