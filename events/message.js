@@ -1,3 +1,5 @@
+const { error } = require("../assets/json/replies.json");
+
 const prefix = process.env.PREFIX;
 
 module.exports = (client) => {
@@ -9,8 +11,8 @@ module.exports = (client) => {
 
         const command = client.commands.get(cmd) || client.commands.find((a) => a.aliases && a.aliases.includes(cmd));
 
-        if (!msg.author.hasPermission(command.permissions)) {
-            msg.channel.send(`you don't have the permissions to execute this command, permissions needed: ${command.permissions}`);
+        if (!msg.member.hasPermission(command.permissions)) {
+            msg.channel.send(error.permissions);
 
             return;
         }

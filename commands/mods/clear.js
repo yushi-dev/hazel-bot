@@ -1,7 +1,7 @@
 module.exports = {
     name: "clear",
     aliases: ["rm"],
-    permissions: ["MANAGE_MESSAGES"],
+    permissions: ["MANAGE_MESSAGES", "KICK_MEMBERS"],
     run({ msg, args }) {
         if (isNaN(args[0])) {
             msg.channel.send("argument must be a number");
@@ -15,8 +15,10 @@ module.exports = {
             return;
         }
 
+        msg.delete();
+
         msg.channel.bulkDelete(args[0]).then(() => {
-            msg.channel.send(`ta-da, deleted ${args[0]} messages`).then(msg => msg.delete(3000));
+            msg.channel.send(`ta-da, i've deleted \`${args[0]}\` messages!`);
         });
     }
-}
+};

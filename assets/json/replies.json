@@ -9,6 +9,7 @@
         "mention": [
             "muffin, you must mention someone!",
             "um, there's on mention :o"
-        ]
+        ],
+        "permissions": "you don't have the required permissions to use this command"
     }
 }
