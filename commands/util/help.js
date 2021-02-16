@@ -1,11 +1,8 @@
 const Discord = require("discord.js");
 const Util = require("../../util/functions");
 
-const { blush } = require("../../assets/json/images.json");
-
 module.exports = {
-    name: "blush",
-    aliases: ["shy"],
+    name: "help",
     run({ msg, args }) {
         const mentions = msg.mentions.users.first(5);
 

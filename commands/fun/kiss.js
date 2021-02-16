@@ -20,11 +20,11 @@ module.exports = {
             .setColor("#c58c7d")
             .setImage(Util.getRandomArrayElement(kiss));
 
-        const description = msg.mentions.has(msg.author) ?
+        const desc = msg.mentions.has(msg.author) ?
             `um, ${msg.author} has kissed themselves?` :
             `woah, ${msg.author} has kissed ${mentions.join(", ")}`;
 
-        embed.setDescription(description);
+        embed.setDescription(desc);
 
         msg.channel.send(embed);
     },

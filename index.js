@@ -1,19 +1,18 @@
 const { Client, Collection } = require("discord.js");
-const { readdirSync } = require("fs");
-
-const client = new Client();
+const Util = require("./util/functions");
 
 require("dotenv").config();
 
-["commands", "alias"].forEach((item) => (client[item] = new Collection()));
+const client = new Client();
 
-for (const folder of readdirSync("./commands")) {
-    for (const file of readdirSync(`./commands/${folder}`)) {
-        const cmd = require(`./commands/${folder}/${file}`);
-        client.commands.set(cmd.name, cmd);
-    }
-}
+client.commands = new Collection();
+client.alias = new Collection();
 
-readdirSync("./events").forEach(file => require(`./events/${file}`)(client));
+Util.getFiles("./commands", ".js").forEach(file => {
+    const cmd = require(file);
+    client.commands.set(cmd.name, cmd);
+});
+
+Util.getFiles("./events", ".js").forEach(file => require(file)(client));
 
 client.login(process.env.CLIENT_TOKEN);

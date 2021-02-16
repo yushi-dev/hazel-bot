@@ -20,11 +20,11 @@ module.exports = {
             .setColor("#c58c7d")
             .setImage(Util.getRandomArrayElement(hugs));
 
-        const description = msg.mentions.has(msg.author) ?
+        const desc = msg.mentions.has(msg.author) ?
             `aw, here's a hug! ${msg.author}` :
             `aw, ${msg.author} has hugged ${mentions.join(", ")}`;
 
-        embed.setDescription(description);
+        embed.setDescription(desc);
 
         msg.channel.send(embed);
     },
