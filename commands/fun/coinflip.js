@@ -1,9 +1,12 @@
 const Util = require("../../util/functions");
 
-module.exports = {
+module.exports.info = {
     name: "coinflip",
     aliases: ["flip"],
-    run({ msg }) {
-        msg.channel.send(Util.getRandomArrayElement(["heads", "tails"]));
-    }
+};
+
+module.exports.run = ({ msg }) => {
+    const random_item = Util.getRandomArrayElement(["heads", "tails"]);
+
+    msg.channel.send(random_item);
 };

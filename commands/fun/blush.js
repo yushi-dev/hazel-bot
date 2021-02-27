@@ -1,26 +1,24 @@
 const Discord = require("discord.js");
 const Util = require("../../util/functions");
+const Config = require("../../assets/json/config.json");
 
-const { blush } = require("../../assets/json/images.json");
-
-module.exports = {
+module.exports.info = {
     name: "blush",
     aliases: ["shy"],
-    run({ msg, args }) {
-        const mentions = msg.mentions.users.first(5);
-
-        const embed = new Discord.MessageEmbed()
-            .setColor("#c58c7d")
-            .setImage(Util.getRandomArrayElement(blush));
-
-        const desc = (!args.length || msg.mentions.has(msg.author)) ?
-            `eek, ${msg.author} has blushed-` :
-            `aw, ${msg.author} has blushed towards ${mentions.join(", ")}`;
-
-        embed.setDescription(desc);
-
-        msg.channel.send(embed);
-    },
 };
 
+module.exports.run = ({ msg, args }) => {
+    const mentions = msg.mentions.users.first(5);
 
+    const embed = new Discord.MessageEmbed()
+        .setColor(Config.color)
+        .setImage(Util.getRandomArrayElement(Config.images.blush));
+
+    const description = (!args.length || msg.mentions.has(msg.author)) ?
+        `eek, ${msg.author} has blushed-` :
+        `aw, ${msg.author} has blushed towards ${mentions.join(", ")}`;
+
+    embed.setDescription(description);
+
+    msg.channel.send(embed);
+};

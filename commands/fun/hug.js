@@ -1,31 +1,32 @@
 const Discord = require("discord.js");
 const Util = require("../../util/functions");
+const Config = require("../../assets/json/config.json");
 
-const { hugs } = require("../../assets/json/images.json");
-const { error } = require("../../assets/json/replies.json");
-
-module.exports = {
+module.exports.info = {
     name: "hug",
     aliases: ["cuddle", "snuggle"],
-    run({ msg }) {
-        const mentions = msg.mentions.users.first(5);
+};
 
-        if (!mentions.length) {
-            msg.channel.send(Util.getRandomArrayElement(error.mention));
+module.exports.run = ({ msg }) => {
+    const mentions = msg.mentions.users.first(5);
 
-            return;
-        };
+    if (!mentions.length) {
+        const random_reply = Util.getRandomArrayElement(Config.replies.error.mention);
 
-        const embed = new Discord.MessageEmbed()
-            .setColor("#c58c7d")
-            .setImage(Util.getRandomArrayElement(hugs));
+        msg.channel.send(random_reply);
 
-        const desc = msg.mentions.has(msg.author) ?
-            `aw, here's a hug! ${msg.author}` :
-            `aw, ${msg.author} has hugged ${mentions.join(", ")}`;
+        return;
+    };
 
-        embed.setDescription(desc);
+    const embed = new Discord.MessageEmbed()
+        .setColor(Config.color)
+        .setImage(Util.getRandomArrayElement(Config.images.hugs));
 
-        msg.channel.send(embed);
-    },
+    const description = msg.mentions.has(msg.author) ?
+        `aw, here's a hug! ${msg.author}` :
+        `aw, ${msg.author} has hugged ${mentions.join(", ")}`;
+
+    embed.setDescription(description);
+
+    msg.channel.send(embed);
 };

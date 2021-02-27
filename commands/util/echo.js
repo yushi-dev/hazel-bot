@@ -1,12 +1,14 @@
 const Util = require("../../util/functions");
+const Config = require("../../assets/json/config.json");
 
-const { echo } = require("../../assets/json/replies.json");
-
-module.exports = {
+module.exports.info = {
     name: "echo",
     aliases: ["say"],
     description: "repeats a given message",
-    run({ msg, args }) {
-        msg.channel.send(args.join(" ") || Util.getRandomArrayElement(echo));
-    },
+};
+
+module.exports.run = ({ msg, args }) => {
+    const random_reply = Util.getRandomArrayElement(Config.replies.echo);
+
+    msg.channel.send(args.join(" ") || random_reply);
 };

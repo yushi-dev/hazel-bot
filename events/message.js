@@ -1,5 +1,3 @@
-const { error } = require("../assets/json/replies.json");
-
 const prefix = process.env.PREFIX;
 
 module.exports = (client) => {
@@ -7,18 +5,18 @@ module.exports = (client) => {
         if (!msg.content.startsWith(prefix) || msg.channel.type === "dm" || msg.author.bot) return;
 
         const args = msg.content.slice(prefix.length).split(/ +/);
-        const cmd = args.shift().toLowerCase();
+        const command_name = args.shift().toLowerCase();
 
-        const command = client.commands.get(cmd) || client.commands.find((a) => a.aliases && a.aliases.includes(cmd));
+        const command =
+            client.commands.get(command_name) ||
+            client.commands.find((cmd) => cmd.info.aliases && cmd.info.aliases.includes(command_name));
 
-        if (!msg.member.hasPermission(command.permissions)) {
-            msg.channel.send(error.permissions);
+        if (!msg.member.hasPermission(command.info.permissions)) {
+            msg.channel.send(command.info.permissions);
 
             return;
         }
 
-        if (command) {
-            command.run({ client, msg, args });
-        };
+        if (command) command.run({ client, msg, args });
     });
 };

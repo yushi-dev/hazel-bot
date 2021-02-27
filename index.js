@@ -8,11 +8,13 @@ const client = new Client();
 client.commands = new Collection();
 client.alias = new Collection();
 
-Util.getFiles("./commands", ".js").forEach(file => {
-    const cmd = require(file);
-    client.commands.set(cmd.name, cmd);
-});
+for (const command of Util.scanFolderForFiles("./commands", ".js")) {
+    const cmd = require(command);
+    client.commands.set(cmd.info.name, cmd);
+}
 
-Util.getFiles("./events", ".js").forEach(file => require(file)(client));
+for (const event of Util.scanFolderForFiles("./events", ".js")) {
+    require(event)(client);
+}
 
 client.login(process.env.CLIENT_TOKEN);
