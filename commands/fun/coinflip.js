@@ -6,7 +6,7 @@ module.exports.info = {
 };
 
 module.exports.run = ({ msg }) => {
-    const random_item = Util.getRandomArrayElement(["heads", "tails"]);
+    const random_element = Util.getRandomArrayElement(["heads", "tails"]);
 
-    msg.channel.send(random_item);
+    msg.channel.send(random_element);
 };
