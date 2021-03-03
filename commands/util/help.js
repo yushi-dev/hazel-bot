@@ -16,7 +16,7 @@ module.exports.run = ({ client, msg, args, prefix }) => {
         .setFooter(`need more help? contact yushi ^^`);
 
     if (!args.length) {
-        const collect_commands = fs
+        const collected_commands = fs
             .readdirSync("./commands")
             .map((catagory) => {
                 let command_names = Util.getCommands(
@@ -34,7 +34,7 @@ module.exports.run = ({ client, msg, args, prefix }) => {
             .setTitle("hazel's support")
             .setDescription("here's a list of every command available!")
             .addField("usage", `\`${prefix}command\``)
-            .addFields(...collect_commands);
+            .addFields(...collected_commands);
     } else {
         const command = client.commands.get(
             client.aliases.get(args[0]) || args[0]
@@ -56,7 +56,7 @@ module.exports.run = ({ client, msg, args, prefix }) => {
             )
             .addFields(
                 {
-                    name: `usage`,
+                    name: "usage",
                     value: `\`${
                         prefix +
                         command.info.name +
@@ -64,12 +64,12 @@ module.exports.run = ({ client, msg, args, prefix }) => {
                     }\``,
                 },
                 {
-                    name: `aliases`,
+                    name: "aliases",
                     value: command.info.aliases.join(", ") || "no aliases set",
                     inline: true,
                 },
                 {
-                    name: `permissions`,
+                    name: "permissions",
                     value: command.info.permissions
                         ? command.info.permissions
                               .join(", ")
