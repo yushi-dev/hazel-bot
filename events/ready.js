@@ -1,13 +1,16 @@
-module.exports = (client) => {
-    client.once("ready", () => {
-        console.log("client is online");
+module.exports.info = {
+    name: "ready",
+    once: true,
+};
 
-        client.user.setPresence({
-            status: "online",
-            activity: {
-                name: "this silly code~",
-                type: "WATCHING",
-            },
-        });
+module.exports.run = (client) => {
+    console.log("client is online");
+
+    client.user.setPresence({
+        status: "online",
+        activity: {
+            name: "this silly code~",
+            type: "WATCHING",
+        },
     });
 };

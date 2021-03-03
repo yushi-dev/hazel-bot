@@ -4,5 +4,7 @@ module.exports.info = {
 };
 
 module.exports.run = ({ msg }) => {
-    msg.channel.send(`ping is around \`${Date.now() - msg.createdTimestamp}\` ms!`);;
+    msg.channel.send(
+        `ping is around \`${Date.now() - msg.createdTimestamp}\` ms!`
+    );
 };

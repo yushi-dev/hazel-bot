@@ -8,7 +8,7 @@ module.exports.info = {
 };
 
 module.exports.run = ({ msg, args }) => {
-    const random_reply = Util.getRandomArrayElement(Config.replies.echo);
-
-    msg.channel.send(args.join(" ") || random_reply);
+    msg.channel.send(
+        args.join(" ") || Util.getRandomArrayElement(Config.replies.echo)
+    );
 };

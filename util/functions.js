@@ -5,7 +5,7 @@ module.exports = class {
         return array[Math.floor(Math.random() * array.length)];
     }
 
-    static scanFolderForFiles(dir, ext) {
-        return glob.sync(`${dir}/**/*${ext}`);
+    static getCommands(dir) {
+        return glob.sync(`${dir}/**/*.js`);
     }
 };

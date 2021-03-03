@@ -5,6 +5,8 @@ const Config = require("../../assets/json/config.json");
 module.exports.info = {
     name: "blush",
     aliases: ["shy"],
+    description: "preform a blush",
+    usage: "<mention+?>",
 };
 
 module.exports.run = ({ msg, args }) => {
@@ -14,11 +16,11 @@ module.exports.run = ({ msg, args }) => {
         .setColor(Config.color)
         .setImage(Util.getRandomArrayElement(Config.images.blush));
 
-    const description = (!args.length || msg.mentions.has(msg.author)) ?
-        `eek, ${msg.author} has blushed-` :
-        `aw, ${msg.author} has blushed towards ${mentions.join(", ")}`;
-
-    embed.setDescription(description);
+    embed.setDescription(
+        !args.length || msg.mentions.has(msg.author)
+            ? `eek, ${msg.author} has blushed-`
+            : `aw, ${msg.author} has blushed towards ${mentions.join(", ")}`
+    );
 
     msg.channel.send(embed);
 };

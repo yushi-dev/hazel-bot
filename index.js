@@ -1,20 +1,29 @@
-const { Client, Collection } = require("discord.js");
+const Discord = require("discord.js");
 const Util = require("./util/functions");
 
 require("dotenv").config();
 
-const client = new Client();
+const client = new Discord.Client();
 
-client.commands = new Collection();
-client.alias = new Collection();
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 
-for (const command of Util.scanFolderForFiles("./commands", ".js")) {
-    const cmd = require(command);
-    client.commands.set(cmd.info.name, cmd);
-}
+Util.getCommands("./commands").forEach((cmd) => {
+    const command = require(cmd);
 
-for (const event of Util.scanFolderForFiles("./events", ".js")) {
-    require(event)(client);
-}
+    client.commands.set(command.info.name, command);
+
+    if (command.info.aliases) {
+        command.info.aliases.forEach((i) => client.aliases.set(i, command));
+    }
+});
+
+Util.getCommands("./events").forEach((file) => {
+    const event = require(file);
+
+    client[event.info.once ? "once" : "on"](event.info.name, (...args) =>
+        event.run(...args, client)
+    );
+});
 
 client.login(process.env.CLIENT_TOKEN);
