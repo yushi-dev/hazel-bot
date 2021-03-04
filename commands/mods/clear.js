@@ -7,7 +7,7 @@ module.exports.info = {
 };
 
 module.exports.run = ({ msg, args }) => {
-    if (isNaN(args[0])) {
+    if (isNaN(args[0]) || args[0] === 0) {
         msg.channel.send("error, argument must be a number!");
 
         return;
@@ -25,7 +25,7 @@ module.exports.run = ({ msg, args }) => {
         msg.channel
             .send(`ta-da, i've deleted \`${args[0]}\` messages!`)
             .then((msg) => {
-                msg.delete({ timeout: 10000 });
+                msg.delete({ timeout: 5000 });
             });
     });
 };

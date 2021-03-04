@@ -26,7 +26,7 @@ module.exports.run = (msg, client) => {
 
     if (!msg.member.hasPermission(command.info.permissions)) {
         msg.channel.send(
-            "um, you have insufficient permissions to use this command ^^;"
+            "um, you have insufficient permissions to use this command"
         );
 
         return;

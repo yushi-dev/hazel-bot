@@ -13,7 +13,7 @@ module.exports.info = {
 module.exports.run = ({ client, msg, args, prefix }) => {
     const embed = new Discord.MessageEmbed()
         .setColor(Config.color)
-        .setFooter(`need more help? contact yushi ^^`);
+        .setFooter(`need more help? contact yushi`);
 
     if (!args.length) {
         const collected_commands = fs
