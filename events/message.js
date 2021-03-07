@@ -1,9 +1,5 @@
 const prefix = process.env.PREFIX;
 
-module.exports.info = {
-    name: "message",
-};
-
 module.exports.run = (msg, client) => {
     if (
         !msg.content.startsWith(prefix) ||

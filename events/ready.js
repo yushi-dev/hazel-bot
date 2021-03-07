@@ -1,5 +1,4 @@
 module.exports.info = {
-    name: "ready",
     once: true,
 };
 
@@ -9,7 +8,7 @@ module.exports.run = (client) => {
     client.user.setPresence({
         status: "online",
         activity: {
-            name: "this silly code~",
+            name: "the clouds...",
             type: "WATCHING",
         },
     });

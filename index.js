@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const Util = require("./util/functions");
+const path = require("path");
 
 require("dotenv").config();
 
@@ -20,8 +21,9 @@ Util.getCommands("./commands").forEach((cmd) => {
 
 Util.getCommands("./events").forEach((file) => {
     const event = require(file);
+    const ifOnce = event.info ? event.info.once : false;
 
-    client[event.info.once ? "once" : "on"](event.info.name, (...args) =>
+    client[ifOnce ? "once" : "on"](path.basename(file, ".js"), (...args) =>
         event.run(...args, client)
     );
 });

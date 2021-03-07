@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const Util = require("../../util/functions");
-const Config = require("../../assets/json/config.json");
+const Config = require("../../config.json");
 
 module.exports.info = {
     name: "blush",

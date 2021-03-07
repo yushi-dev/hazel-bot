@@ -1,8 +1,8 @@
 const path = require("path");
-const Util = require("../../util/functions");
-const Config = require("../../assets/json/config.json");
-const Discord = require(`discord.js`);
 const fs = require("fs");
+const Util = require("../../util/functions");
+const Config = require("../../config.json");
+const Discord = require(`discord.js`);
 
 module.exports.info = {
     name: "help",
@@ -33,7 +33,7 @@ module.exports.run = ({ client, msg, args, prefix }) => {
         embed
             .setTitle("hazel's support")
             .setDescription("here's a list of every command available!")
-            .addField("usage", `\`${prefix}command\``)
+            .addField("usage", `\`${prefix}command-name\``)
             .addFields(...collected_commands);
     } else {
         const command = client.commands.get(

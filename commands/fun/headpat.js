@@ -3,10 +3,10 @@ const Util = require("../../util/functions");
 const Config = require("../../config.json");
 
 module.exports.info = {
-    name: "hug",
+    name: "headpat",
     aliases: ["cuddle", "snuggle"],
-    description: "preforms a hug",
     usage: "<mention+>",
+    description: "preforms a headpat",
 };
 
 module.exports.run = ({ msg }) => {
@@ -22,12 +22,12 @@ module.exports.run = ({ msg }) => {
 
     const embed = new Discord.MessageEmbed()
         .setColor(Config.color)
-        .setImage(Util.getRandomArrayElement(Config.images.hugs));
+        .setImage(Util.getRandomArrayElement(Config.images.headpat));
 
     embed.setDescription(
         msg.mentions.has(msg.author)
-            ? `aw, here's a hug! ${msg.author}`
-            : `aw, ${msg.author} has hugged ${mentions.join(", ")}`
+            ? `aw, here's a pat! ${msg.author}`
+            : `aw, ${msg.author} has patted ${mentions.join(", ")}`
     );
 
     msg.channel.send(embed);

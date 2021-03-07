@@ -1,5 +1,8 @@
 {
     "color": "#c58c7d",
+    "welcome": {
+        "img" : "https://i.imgur.com/KYGge8u.jpg"
+    },
     "replies": {
         "echo": [
             "um, aren't i supposed to echo something?",
@@ -16,6 +19,18 @@
         }
     },
     "images": {
+        "headpat": [
+            "https://media.giphy.com/media/109ltuoSQT212w/giphy.gif",
+            "https://media.giphy.com/media/ye7OTQgwmVuVy/giphy.gif",
+            "https://media.giphy.com/media/ARSp9T7wwxNcs/giphy.gif",
+            "https://media.giphy.com/media/SWjOyVOcUECfdG7dQm/giphy.gif",
+            "https://media.giphy.com/media/S6NIIbtNYOTtvgdwWC/giphy.gif",
+            "https://media.giphy.com/media/QWRln9pNiBmJt1Krks/giphy.gif",
+            "https://media.giphy.com/media/S5uT7KROKtGCON9w4c/giphy.gif",
+            "https://media.giphy.com/media/S98oiYhUk7pa6RjC7C/giphy.gif",
+            "https://media.giphy.com/media/eMtJldMsmIbQkcewyx/giphy.gif",
+            "https://media.giphy.com/media/l1rejhOyfxSdzOgIfx/giphy.gif"
+        ],
         "hugs": [
             "https://media.giphy.com/media/ZQN9jsRWp1M76/giphy.gif",
             "https://media.giphy.com/media/lrr9rHuoJOE0w/giphy.gif",
