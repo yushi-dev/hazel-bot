@@ -16,25 +16,23 @@ module.exports.run = ({ client, msg, args, prefix }) => {
         .setFooter(`need more help? contact yushi`);
 
     if (!args.length) {
-        const collected_commands = fs
-            .readdirSync("./commands")
-            .map((catagory) => {
-                let command_names = Util.getCommands(
-                    `./commands/${catagory}`
-                ).map((file) => path.parse(file).name);
+        const get_cmds = fs.readdirSync("./commands").map((catagory) => {
+            let command_names = Util.getCommands(`./commands/${catagory}`).map(
+                (file) => path.parse(file).name
+            );
 
-                return {
-                    name: catagory,
-                    value: command_names.join(", "),
-                    inline: true,
-                };
-            });
+            return {
+                name: catagory,
+                value: command_names.join(", "),
+                inline: true,
+            };
+        });
 
         embed
             .setTitle("hazel's support")
             .setDescription("here's a list of every command available!")
             .addField("usage", `\`${prefix}command-name\``)
-            .addFields(...collected_commands);
+            .addFields(...get_cmds);
     } else {
         const command = client.commands.get(
             client.aliases.get(args[0]) || args[0]
@@ -52,7 +50,7 @@ module.exports.run = ({ client, msg, args, prefix }) => {
             .setTitle(command.info.name)
             .setDescription(
                 command.info.description ||
-                    "this command doesn't have any description set"
+                    "this command doesn't have a description set"
             )
             .addFields(
                 {
