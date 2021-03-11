@@ -19,13 +19,13 @@ module.exports.run = ({ msg, args }) => {
         return;
     }
 
-    msg.delete();
-
-    msg.channel.bulkDelete(args[0]).then(() => {
-        msg.channel
-            .send(`ta-da, i've deleted \`${args[0]}\` messages!`)
-            .then((msg) => {
-                msg.delete({ timeout: 5000 });
-            });
+    msg.delete().then(() => {
+        msg.channel.bulkDelete(args[0]).then(() => {
+            msg.channel
+                .send(`ta-da, i've deleted \`${args[0]}\` messages!`)
+                .then((msg) => {
+                    msg.delete({ timeout: 5000 });
+                });
+        });
     });
 };
