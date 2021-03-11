@@ -16,23 +16,21 @@ module.exports.run = ({ client, msg, args, prefix }) => {
         .setFooter(`need more help? contact yushi`);
 
     if (!args.length) {
-        const get_cmds = fs.readdirSync("./commands").map((catagory) => {
-            let command_names = Util.getCommands(`./commands/${catagory}`).map(
-                (file) => path.parse(file).name
-            );
-
-            return {
-                name: catagory,
-                value: command_names.join(", "),
-                inline: true,
-            };
-        });
-
         embed
             .setTitle("hazel's support")
             .setDescription("here's a list of every command available!")
             .addField("usage", `\`${prefix}command-name\``)
-            .addFields(...get_cmds);
+            .addFields(
+                ...fs.readdirSync("./commands").map((catagory) => {
+                    return {
+                        name: catagory,
+                        value: Util.getCommands(`./commands/${catagory}`)
+                            .map((file) => path.parse(file).name)
+                            .join(", "),
+                        inline: true,
+                    };
+                })
+            );
 
         msg.channel.send(embed);
 
