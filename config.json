@@ -7,22 +7,22 @@
         "echo": [
             "um, aren't i supposed to echo something?",
             "goose, i need something to echo",
-            "trying to get someone's attention? c:",
+            "trying to get someone's attention? hehe",
             "echo, echo?"
         ],
         "error": {
             "mention": [
                 "muffin, you must mention someone!",
-                "um, there's no one being mentioned :o"
+                "um, there's no one being mentioned "
             ],
             "permissions": "you don't have the required permissions to use this command"
         }
     },
     "images": {
         "punch": [
-            "https://imgur.com/yD8oT9q",
-            "https://imgur.com/KGmevOj",
-            "https://imgur.com/xSqc5qc"
+            "https://media.giphy.com/media/dLFdh0a92fhxoTgZVf/giphy.gif",
+            "https://media.giphy.com/media/vtjMER18uH2bX4VUHq/giphy.gif",
+            "https://media.giphy.com/media/xVMLgxUrQR1inwGpem/giphy.gif"
         ],
         "lick": [
             "https://media.giphy.com/media/ZeLFBjnBz9MTsrmBop/giphy.gif",
