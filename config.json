@@ -19,7 +19,11 @@
         }
     },
     "images": {
-        "punch": [],
+        "punch": [
+            "https://imgur.com/yD8oT9q",
+            "https://imgur.com/KGmevOj",
+            "https://imgur.com/xSqc5qc"
+        ],
         "lick": [
             "https://media.giphy.com/media/ZeLFBjnBz9MTsrmBop/giphy.gif",
             "https://media.giphy.com/media/l4dUubfeVZt6IPpr6o/giphy.gif",
