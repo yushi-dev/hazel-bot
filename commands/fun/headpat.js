@@ -4,6 +4,7 @@ const Config = require("../../config.json");
 
 module.exports.info = {
     name: "headpat",
+    aliases: ["pat"],
     usage: "<mention+>",
     description: "preforms a headpat",
 };
