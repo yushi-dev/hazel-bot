@@ -22,9 +22,9 @@ module.exports.run = ({ msg }) => {
                 },
                 {
                     name: "joined at",
-                    value: moment(msg.guild.member(msg.author).joinedAt).format(
-                        "MMMM d, yyyy"
-                    ),
+                    value: moment(msg.guild.member(msg.author).joinedAt)
+                        .format("MMMM d, yyyy")
+                        .toLowerCase(),
                     inline: true,
                 }
             )
