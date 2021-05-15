@@ -21,10 +21,10 @@ module.exports.run = ({ client, msg, args, prefix }) => {
             .setDescription("here's a list of every command available!")
             .addField("usage", `\`${prefix}command-name\``)
             .addFields(
-                ...fs.readdirSync("./commands").map((catagory) => {
+                ...fs.readdirSync("./commands").map((sub) => {
                     return {
-                        name: catagory,
-                        value: Util.getCommands(`./commands/${catagory}`)
+                        name: sub,
+                        value: Util.getCommands(`./commands/${sub}`)
                             .map((file) => path.parse(file).name)
                             .join(", "),
                         inline: true,

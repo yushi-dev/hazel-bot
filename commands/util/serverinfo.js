@@ -17,7 +17,9 @@ module.exports.run = ({ msg }) => {
                 { name: "members", value: msg.guild.memberCount },
                 {
                     name: "created at",
-                    value: moment(msg.guild.createdAt).format("MMMM d, yyyy"),
+                    value: moment(msg.guild.createdAt)
+                        .format("MMMM d, yyyy")
+                        .toLowerCase(),
                     inline: true,
                 },
                 {
