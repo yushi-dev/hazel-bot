@@ -47,6 +47,8 @@ module.exports.run = ({ client, msg, args, prefix }) => {
         return;
     }
 
+    console.log(command.info.aliases);
+
     embed
         .setTitle(command.info.name)
         .setDescription(
@@ -65,8 +67,8 @@ module.exports.run = ({ client, msg, args, prefix }) => {
             {
                 name: "aliases",
                 value: command.info.aliases
-                    ? "no aliases set"
-                    : command.info.aliases.join(", "),
+                    ? command.info.aliases.join(", ")
+                    : "no aliases set",
                 inline: true,
             },
             {
