@@ -64,7 +64,9 @@ module.exports.run = ({ client, msg, args, prefix }) => {
             },
             {
                 name: "aliases",
-                value: command.info.aliases.join(", ") || "no aliases set",
+                value: command.info.aliases
+                    ? "no aliases set"
+                    : command.info.aliases.join(", "),
                 inline: true,
             },
             {
