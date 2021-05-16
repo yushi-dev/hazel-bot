@@ -25,7 +25,8 @@ module.exports.run = ({ msg, args }) => {
             "might",
             "should",
         ]) &&
-        args[args.length - 1].endsWith("?")
+        args[args.length - 1].endsWith("?") &&
+        args.length > 2
     ) {
         msg.channel.send(
             Util.getRandomArrayElement([
