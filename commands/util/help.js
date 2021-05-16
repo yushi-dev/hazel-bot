@@ -11,7 +11,7 @@ module.exports.info = {
 
 module.exports.run = ({ client, msg, args, prefix }) => {
     const embed = new Discord.MessageEmbed()
-        .setColor("#c58c7d")
+        .setColor("#c79e82")
         .setFooter(`need more help? contact yushi`);
 
     if (!args.length) {

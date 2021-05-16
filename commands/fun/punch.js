@@ -22,7 +22,7 @@ module.exports.run = ({ msg }) => {
     }
 
     const embed = new Discord.MessageEmbed()
-        .setColor("#c58c7d")
+        .setColor("#c79e82")
         .setImage(
             Util.getRandomArrayElement([
                 "https://media.giphy.com/media/dLFdh0a92fhxoTgZVf/giphy.gif",

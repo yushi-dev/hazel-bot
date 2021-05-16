@@ -5,7 +5,7 @@ module.exports.run = (member) => {
         .get("785928459980767293")
         .send(
             new Discord.MessageEmbed()
-                .setColor("#c58c7d")
+                .setColor("#c79e82")
                 .setTitle(`welcome to ${member.guild.name}!`)
                 .setDescription(
                     `${member.user} has entered ${member.guild.name}!`

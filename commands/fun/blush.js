@@ -12,7 +12,7 @@ module.exports.run = ({ msg, args }) => {
     const mentions = msg.mentions.users.first(5);
 
     const embed = new Discord.MessageEmbed()
-        .setColor("#c58c7d")
+        .setColor("#c79e82")
         .setImage(
             Util.getRandomArrayElement([
                 "https://media.giphy.com/media/ulWUgCk4F1GGA/giphy.gif",

@@ -8,7 +8,7 @@ module.exports.info = {
 module.exports.run = ({ msg }) => {
     msg.channel.send(
         new Discord.MessageEmbed()
-            .setColor("#c58c7d")
+            .setColor("#c79e82")
             .setTitle(msg.guild.name)
             .setDescription(`our server owner is ${msg.guild.owner.user}!`)
             .setThumbnail(msg.guild.iconURL())
