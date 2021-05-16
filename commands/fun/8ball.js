@@ -5,32 +5,46 @@ module.exports.info = {
     description: "replies to a polar question",
 };
 
-module.exports.run = ({ msg }) => {
-    if (!msg.length) {
+module.exports.run = ({ msg, args }) => {
+    if (!args.length) {
         return;
     }
 
-    if (!msg.endsWith("?")) {
-        msg.channel.send("that is not a question...");
-
-        return;
+    if (
+        Util.StartsWithUsingArray(args[0].toLowerCase(), [
+            "can",
+            "will",
+            "is",
+            "are",
+            "am",
+            "do",
+            "how",
+            "does",
+            "would",
+            "may",
+            "might",
+            "should",
+        ]) &&
+        args[args.length - 1].endsWith("?")
+    ) {
+        msg.channel.send(
+            Util.getRandomArrayElement([
+                "yes i agree",
+                "that's false",
+                "maybe",
+                "idk",
+                "not sure",
+                "unresolved",
+                "definitely",
+                "not answering",
+                "ur weird for asking that...",
+                "ask again :)",
+                "without a doubt",
+                "very likely",
+                "ofc",
+            ])
+        );
+    } else {
+        msg.channel.send("that's not a question :(");
     }
-
-    msg.channel.send(
-        Util.getRandomArrayElement([
-            "yes i agree",
-            "that's false",
-            "maybe",
-            "idk",
-            "not sure",
-            "unresolved",
-            "definitely",
-            "not answering",
-            "ur weird for asking that...",
-            "ask again :)",
-            "without a doubt",
-            "very likely",
-            "ofc",
-        ])
-    );
 };

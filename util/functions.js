@@ -8,4 +8,8 @@ module.exports = class {
     static getCommands(dir) {
         return glob.sync(`${dir}/**/*.js`);
     }
+
+    static StartsWithUsingArray(string, arr) {
+        return arr.includes(string.split(" ")[0]);
+    }
 };
