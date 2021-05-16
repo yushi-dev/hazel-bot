@@ -1,4 +1,3 @@
-const Config = require("../config.json");
 const Discord = require("discord.js");
 
 module.exports.run = (member) => {
@@ -6,12 +5,12 @@ module.exports.run = (member) => {
         .get("785928459980767293")
         .send(
             new Discord.MessageEmbed()
-                .setColor(Config.color)
+                .setColor("#c58c7d")
                 .setTitle(`welcome to ${member.guild.name}!`)
                 .setDescription(
                     `${member.user} has entered ${member.guild.name}!`
                 )
-                .setImage(Config.welcome.img)
+                .setImage("https://i.imgur.com/KYGge8u.jpg")
                 .setFooter(
                     "if you have a question, please ask a moderator or admin"
                 )

@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const Util = require("../../util/functions");
-const Config = require("../../config.json");
 
 module.exports.info = {
     name: "punch",
@@ -13,15 +12,24 @@ module.exports.run = ({ msg }) => {
 
     if (!mentions.length) {
         msg.channel.send(
-            Util.getRandomArrayElement(Config.replies.error.mention)
+            Util.getRandomArrayElement([
+                "u must mention someone :)",
+                "umm there's no one being mentioned...",
+            ])
         );
 
         return;
     }
 
     const embed = new Discord.MessageEmbed()
-        .setColor(Config.color)
-        .setImage(Util.getRandomArrayElement(Config.images.punch));
+        .setColor("#c58c7d")
+        .setImage(
+            Util.getRandomArrayElement([
+                "https://media.giphy.com/media/dLFdh0a92fhxoTgZVf/giphy.gif",
+                "https://media.giphy.com/media/vtjMER18uH2bX4VUHq/giphy.gif",
+                "https://media.giphy.com/media/xVMLgxUrQR1inwGpem/giphy.gif",
+            ])
+        );
 
     embed.setDescription(
         msg.mentions.has(msg.author)

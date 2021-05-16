@@ -1,5 +1,4 @@
 const Util = require("../../util/functions");
-const Config = require("../../config.json");
 
 module.exports.info = {
     name: "echo",
@@ -9,6 +8,12 @@ module.exports.info = {
 
 module.exports.run = ({ msg, args }) => {
     msg.channel.send(
-        args.join(" ") || Util.getRandomArrayElement(Config.replies.echo)
+        args.join(" ") ||
+            Util.getRandomArrayElement([
+                "umm aren't i supposed to echo something?",
+                "i need something to echo smh",
+                "trying to get someone's attention? hehe",
+                "echoo, echooo?",
+            ])
     );
 };

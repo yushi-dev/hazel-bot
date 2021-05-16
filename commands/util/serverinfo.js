@@ -1,4 +1,3 @@
-const Config = require("../../config.json");
 const Discord = require("discord.js");
 const moment = require("moment");
 
@@ -9,7 +8,7 @@ module.exports.info = {
 module.exports.run = ({ msg }) => {
     msg.channel.send(
         new Discord.MessageEmbed()
-            .setColor(Config.color)
+            .setColor("#c58c7d")
             .setTitle(msg.guild.name)
             .setDescription(`our server owner is ${msg.guild.owner.user}!`)
             .setThumbnail(msg.guild.iconURL())

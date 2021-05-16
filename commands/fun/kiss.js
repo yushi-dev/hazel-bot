@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const Util = require("../../util/functions");
-const Config = require("../../config.json");
 
 module.exports.info = {
     name: "kiss",
@@ -13,15 +12,32 @@ module.exports.run = ({ msg }) => {
 
     if (!mentions.length) {
         msg.channel.send(
-            Util.getRandomArrayElement(Config.replies.error.mention)
+            Util.getRandomArrayElement([
+                "u must mention someone :)",
+                "umm there's no one being mentioned...",
+            ])
         );
 
         return;
     }
 
     const embed = new Discord.MessageEmbed()
-        .setColor(Config.color)
-        .setImage(Util.getRandomArrayElement(Config.images.kiss));
+        .setColor("#c58c7d")
+        .setImage(
+            Util.getRandomArrayElement([
+                "https://media.giphy.com/media/QGc8RgRvMonFm/giphy.gif",
+                "https://media.giphy.com/media/FqBTvSNjNzeZG/giphy.gif",
+                "https://media.giphy.com/media/bGm9FuBCGg4SY/giphy.gif",
+                "https://media.giphy.com/media/zkppEMFvRX5FC/giphy.gif",
+                "https://media.giphy.com/media/nyGFcsP0kAobm/giphy.gif",
+                "https://media.giphy.com/media/11rWoZNpAKw8w/giphy.gif",
+                "https://media.giphy.com/media/w62BhkdkxaCwE/giphy.gif",
+                "https://media.giphy.com/media/hogpNuO4rveGca2wkZ/giphy.gif",
+                "https://media.giphy.com/media/G3va31oEEnIkM/giphy.gif",
+                "https://media.giphy.com/media/bm2O3nXTcKJeU/giphy.gif",
+                "https://media.giphy.com/media/Quhl2AS7lC7MoHrSYk/giphy.gif",
+            ])
+        );
 
     embed.setDescription(
         msg.mentions.has(msg.author)

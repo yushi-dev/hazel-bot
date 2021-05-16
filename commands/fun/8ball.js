@@ -35,7 +35,7 @@ module.exports.run = ({ msg, args }) => {
                 "maybe",
                 "idk",
                 "not sure",
-                "unresolved",
+                "idc",
                 "definitely",
                 "not answering",
                 "ur weird for asking that...",
@@ -43,6 +43,8 @@ module.exports.run = ({ msg, args }) => {
                 "without a doubt",
                 "very likely",
                 "ofc",
+                "why're u asking that... pervert",
+                "u ask too many questions",
             ])
         );
     } else {

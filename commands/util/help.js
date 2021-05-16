@@ -1,7 +1,6 @@
 const path = require("path");
 const fs = require("fs");
 const Util = require("../../util/functions");
-const Config = require("../../config.json");
 const Discord = require(`discord.js`);
 
 module.exports.info = {
@@ -12,7 +11,7 @@ module.exports.info = {
 
 module.exports.run = ({ client, msg, args, prefix }) => {
     const embed = new Discord.MessageEmbed()
-        .setColor(Config.color)
+        .setColor("#c58c7d")
         .setFooter(`need more help? contact yushi`);
 
     if (!args.length) {
