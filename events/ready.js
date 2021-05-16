@@ -8,7 +8,7 @@ module.exports.run = (client) => {
     client.user.setPresence({
         status: "online",
         activity: {
-            name: "the clouds...",
+            name: "anime & valo clips",
             type: "WATCHING",
         },
     });

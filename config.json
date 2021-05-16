@@ -5,17 +5,17 @@
     },
     "replies": {
         "echo": [
-            "um, aren't i supposed to echo something?",
-            "goose, i need something to echo",
+            "umm aren't i supposed to echo something?",
+            "i need something to echo smh",
             "trying to get someone's attention? hehe",
-            "echo, echo?"
+            "echoo, echooo?"
         ],
         "error": {
             "mention": [
-                "muffin, you must mention someone!",
-                "um, there's no one being mentioned "
+                "u must mention someone :)",
+                "umm there's no one being mentioned..."
             ],
-            "permissions": "you don't have the required permissions to use this command"
+            "permissions": "u don't have required permissions to use this command"
         }
     },
     "images": {
