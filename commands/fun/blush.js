@@ -1,14 +1,14 @@
 const Discord = require("discord.js");
 const Util = require("../../util/functions");
 
-module.exports.info = {
+exports.info = {
     name: "blush",
     aliases: ["shy"],
     description: "preform a blush",
     usage: "<mention+?>",
 };
 
-module.exports.run = ({ msg, args }) => {
+exports.run = ({ msg, args }) => {
     const mentions = msg.mentions.users.first(5);
 
     const embed = new Discord.MessageEmbed()

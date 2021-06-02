@@ -1,10 +1,10 @@
-module.exports.info = {
+exports.info = {
     name: "ban",
     usage: "<mention>",
     permissions: ["BAN_MEMBERS", "VIEW_AUDIT_LOG"],
 };
 
-module.exports.run = async ({ msg }) => {
+exports.run = async ({ msg }) => {
     let mentioned_user = msg.mentions.members.first();
 
     if (!mentioned_user) {

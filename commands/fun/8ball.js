@@ -1,11 +1,11 @@
 const Util = require("../../util/functions");
 
-module.exports.info = {
+exports.info = {
     name: "8ball",
     description: "replies to a polar question",
 };
 
-module.exports.run = ({ msg, args }) => {
+exports.run = ({ msg, args }) => {
     if (!args.length) {
         return;
     }

@@ -1,15 +1,12 @@
-const glob = require("glob");
+exports.getRandomArrayElement = (array) => {
+    return array[Math.floor(Math.random() * array.length)];
+};
 
-module.exports = class {
-    static getRandomArrayElement(array) {
-        return array[Math.floor(Math.random() * array.length)];
-    }
+exports.getCommands = (dir) => {
+    const glob = require("glob");
+    return glob.sync(`${dir}/**/*.js`);
+};
 
-    static getCommands(dir) {
-        return glob.sync(`${dir}/**/*.js`);
-    }
-
-    static StartsWithUsingArray(string, arr) {
-        return arr.includes(string.split(" ")[0]);
-    }
+exports.startsWithUsingArray = (string, arr) => {
+    return arr.includes(string.split(" ")[0]);
 };

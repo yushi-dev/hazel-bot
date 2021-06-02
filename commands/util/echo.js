@@ -1,12 +1,12 @@
 const Util = require("../../util/functions");
 
-module.exports.info = {
+exports.info = {
     name: "echo",
     aliases: ["say"],
     description: "repeats a given message",
 };
 
-module.exports.run = ({ msg, args }) => {
+exports.run = ({ msg, args }) => {
     msg.channel.send(
         args.join(" ") ||
             Util.getRandomArrayElement([

@@ -1,10 +1,10 @@
-module.exports.info = {
+exports.info = {
     name: "kick",
     usage: "<mention>",
     permissions: ["KICK_MEMBERS", "VIEW_AUDIT_LOG"],
 };
 
-module.exports.run = async ({ msg }) => {
+exports.run = async ({ msg }) => {
     let mentioned_user = msg.mentions.members.first();
 
     if (!mentioned_user) {

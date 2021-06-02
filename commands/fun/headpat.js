@@ -1,14 +1,14 @@
 const Discord = require("discord.js");
 const Util = require("../../util/functions");
 
-module.exports.info = {
+exports.info = {
     name: "headpat",
     aliases: ["pat"],
     usage: "<mention+>",
     description: "preforms a headpat",
 };
 
-module.exports.run = ({ msg }) => {
+exports.run = ({ msg }) => {
     const mentions = msg.mentions.users.first(5);
 
     if (!mentions.length) {

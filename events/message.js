@@ -1,6 +1,6 @@
 const prefix = process.env.PREFIX;
 
-module.exports.run = (msg, client) => {
+exports.run = (msg, client) => {
     if (
         !msg.content.startsWith(prefix) ||
         msg.channel.type === "dm" ||

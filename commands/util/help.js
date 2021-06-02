@@ -3,13 +3,13 @@ const fs = require("fs");
 const Util = require("../../util/functions");
 const Discord = require(`discord.js`);
 
-module.exports.info = {
+exports.info = {
     name: "help",
     description: "provides command info",
     aliases: ["info", "commands"],
 };
 
-module.exports.run = ({ client, msg, args, prefix }) => {
+exports.run = ({ client, msg, args, prefix }) => {
     const embed = new Discord.MessageEmbed()
         .setColor("#c79e82")
         .setFooter("need more help? contact yushi");

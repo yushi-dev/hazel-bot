@@ -1,8 +1,8 @@
-module.exports.info = {
+exports.info = {
     once: true,
 };
 
-module.exports.run = (client) => {
+exports.run = (client) => {
     console.log("client is online");
 
     client.user.setPresence({

@@ -1,4 +1,4 @@
-module.exports.info = {
+exports.info = {
     name: "clear",
     aliases: ["rm"],
     description: "removes a specified amount of messages",
@@ -6,7 +6,7 @@ module.exports.info = {
     permissions: ["MANAGE_MESSAGES", "KICK_MEMBERS"],
 };
 
-module.exports.run = ({ msg, args }) => {
+exports.run = ({ msg, args }) => {
     if (isNaN(args[0]) || args[0] === 0) {
         msg.channel.send("error, argument must be a number!");
 

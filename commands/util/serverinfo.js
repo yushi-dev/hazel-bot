@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
 const moment = require("moment");
 
-module.exports.info = {
+exports.info = {
     name: "serverinfo",
 };
 
-module.exports.run = ({ msg }) => {
+exports.run = ({ msg }) => {
     msg.channel.send(
         new Discord.MessageEmbed()
             .setColor("#c79e82")
