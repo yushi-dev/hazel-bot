@@ -1,12 +1,15 @@
-export function getRandomArrayElement(array) {
-    return array[Math.floor(Math.random() * array.length)];
-}
+const glob = require("glob");
 
-export function getCommands(dir) {
-    const glob = require("glob");
-    return glob.sync(`${dir}/**/*.js`);
-}
+module.exports = class {
+    static getRandomArrayElement(array) {
+        return array[Math.floor(Math.random() * array.length)];
+    }
 
-export function StartsWithUsingArray(string, arr) {
-    return arr.includes(string.split(" ")[0]);
-}
+    static getCommands(dir) {
+        return glob.sync(`${dir}/**/*.js`);
+    }
+
+    static StartsWithUsingArray(string, arr) {
+        return arr.includes(string.split(" ")[0]);
+    }
+};

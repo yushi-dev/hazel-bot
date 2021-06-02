@@ -1,6 +1,6 @@
 const prefix = process.env.PREFIX;
 
-export function run(msg, client) {
+module.exports.run = (msg, client) => {
     if (
         !msg.content.startsWith(prefix) ||
         msg.channel.type === "dm" ||
@@ -29,4 +29,4 @@ export function run(msg, client) {
     }
 
     command.run({ client, msg, args, prefix });
-}
+};
