@@ -1,8 +1,8 @@
-module.exports.info = {
+export const info = {
     once: true,
 };
 
-module.exports.run = (client) => {
+export function run(client) {
     console.log("client is online");
 
     client.user.setPresence({
@@ -12,4 +12,4 @@ module.exports.run = (client) => {
             type: "WATCHING",
         },
     });
-};
+}
