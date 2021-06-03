@@ -11,7 +11,7 @@ exports.run = ({ msg, args }) => {
     }
 
     if (
-        Util.StartsWithUsingArray(args[0].toLowerCase(), [
+        Util.startsWithUsingArray(args[0].toLowerCase(), [
             "can",
             "will",
             "is",

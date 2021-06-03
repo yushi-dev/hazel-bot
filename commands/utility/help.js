@@ -20,10 +20,10 @@ exports.run = ({ client, msg, args, prefix }) => {
             .setDescription("here's a list of every command available!")
             .addField("usage", `\`${prefix}command-name\``)
             .addFields(
-                ...fs.readdirSync("./commands").map((catagory) => {
+                ...fs.readdirSync("./commands").map((sub) => {
                     return {
-                        name: catagory,
-                        value: Util.getCommands(`./commands/${catagory}`)
+                        name: sub,
+                        value: Util.getCommands(`./commands/${sub}`)
                             .map((file) => path.parse(file).name)
                             .join(", "),
                         inline: true,
@@ -37,6 +37,16 @@ exports.run = ({ client, msg, args, prefix }) => {
     }
 
     const command = client.commands.get(client.aliases.get(args[0]) || args[0]);
+
+    if (!command) {
+        msg.channel.send(
+            `that's not in my database! please use \`${prefix}help\``
+        );
+
+        return;
+    }
+
+    console.log(command.info.aliases);
 
     embed
         .setTitle(command.info.name)
