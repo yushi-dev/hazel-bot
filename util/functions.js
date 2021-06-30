@@ -6,7 +6,3 @@ exports.getCommands = (dir) => {
     const glob = require("glob");
     return glob.sync(`${dir}/**/*.js`);
 };
-
-exports.startsWithUsingArray = (string, arr) => {
-    return arr.includes(string.split(" ")[0]);
-};
