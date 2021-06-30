@@ -26,12 +26,14 @@ exports.run = ({ msg, args }) => {
 
         msg.channel.send(
             new Discord.MessageEmbed()
-                .setDescription(`it's ${current.skytext}`)
-                .setTitle(`weather forecast for ${current.observationpoint}`)
+                .setDescription(`currently ${current.skytext}`)
+                .setTitle(
+                    `weather forecast for ${current.observationpoint.toLowerCase()}`
+                )
                 .addField("timezone", `utc${location.timezone}`, true)
-                .addField("degree Type", "celsius", true)
+                .addField("degree type", "celsius", true)
                 .addField("temperature", `${current.temperature}°`, true)
-                .addField("wind", current.winddisplay, true)
+                .addField("wind", current.winddisplay.toLowerCase(), true)
                 .addField("feels like", `${current.feelslike}°`, true)
                 .addField("humidity", `${current.humidity}%`, true)
         );
