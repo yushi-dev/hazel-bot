@@ -10,31 +10,30 @@ exports.info = {
 exports.run = ({ msg, args }) => {
     weather.find({ search: args.join(" "), degreeType: "C" }, (_, result) => {
         if (!args.length) {
-            msg.channel.send("Please specify a location");
-        }
-
-        if (!result) {
-            msg.channel.send("Invalid location");
+            msg.channel.send("please specify a location");
 
             return;
         }
 
-        console.log(result);
+        if (!result) {
+            msg.channel.send("invalid location");
 
-        var current = result[0].current;
-        var location = result[0].location;
+            return;
+        }
 
-        const weatherinfo = new Discord.MessageEmbed()
-            .setDescription(`**${current.skytext}**`)
-            .setAuthor(`Weather forecast for ${current.observationpoint}`)
-            .setThumbnail(current.imageUrl)
-            .addField("Timezone", `UTC${location.timezone}`, true)
-            .addField("Degree Type", "Celsius", true)
-            .addField("Temperature", `${current.temperature}°`, true)
-            .addField("Wind", current.winddisplay, true)
-            .addField("Feels like", `${current.feelslike}°`, true)
-            .addField("Humidity", `${current.humidity}%`, true);
+        const current = result[0].current;
+        const location = result[0].location;
 
-        msg.channel.send(weatherinfo);
+        msg.channel.send(
+            new Discord.MessageEmbed()
+                .setDescription(`it's ${current.skytext}`)
+                .setTitle(`weather forecast for ${current.observationpoint}`)
+                .addField("timezone", `utc${location.timezone}`, true)
+                .addField("degree Type", "celsius", true)
+                .addField("temperature", `${current.temperature}°`, true)
+                .addField("wind", current.winddisplay, true)
+                .addField("feels like", `${current.feelslike}°`, true)
+                .addField("humidity", `${current.humidity}%`, true)
+        );
     });
 };
