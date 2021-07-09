@@ -6,7 +6,7 @@ exports.info = {
     aliases: ["meme"],
 };
 
-exports.run = ({ msg }) => {
+exports.run = async ({ msg }) => {
     const random = ["dankmemes", "meme", "memes"][
         Math.floor(Math.random() * arr.length)
     ];
