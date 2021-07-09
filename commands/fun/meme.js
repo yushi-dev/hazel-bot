@@ -6,10 +6,9 @@ exports.info = {
     aliases: ["meme"],
 };
 
-exports.run = async ({ msg }) => {
-    const random = ["dankmemes", "meme", "memes"][
-        Math.floor(Math.random() * arr.length)
-    ];
+exports.run = ({ msg }) => {
+    const arr = ["dankmemes", "meme", "memes"];
+    const random = arr[Math.floor(Math.random() * arr.length)];
 
     const img = await randomPuppy(random);
 
@@ -17,7 +16,7 @@ exports.run = async ({ msg }) => {
         new Discord.MessageEmbed()
             .setColor("RANDOM")
             .setImage(img)
-            .setTitle(`from r/${random}`)
+            .setTitle(`Your meme. From r/${random}`)
             .setURL(`https://reddit.com/r/${random}`)
     );
 };
