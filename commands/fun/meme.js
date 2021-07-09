@@ -16,7 +16,7 @@ exports.run = ({ msg }) => {
         new Discord.MessageEmbed()
             .setColor("RANDOM")
             .setImage(img)
-            .setTitle(`Your meme. From r/${random}`)
+            .setTitle(`from r/${random}`)
             .setURL(`https://reddit.com/r/${random}`)
     );
 };
