@@ -7,6 +7,7 @@
         "dotenv": "^8.2.0",
         "glob": "^7.1.6",
         "moment": "^2.29.1",
+        "random-puppy": "^1.1.0",
         "weather-js": "^2.0.0"
     },
     "devDependencies": {
