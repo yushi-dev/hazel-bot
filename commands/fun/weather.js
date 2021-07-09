@@ -26,7 +26,7 @@ exports.run = ({ msg, args }) => {
 
         msg.channel.send(
             new Discord.MessageEmbed()
-                .setDescription(`currently ${current.skytext.toLowerCase()}`)
+                .setDescription(current.skytext.toLowerCase())
                 .setTitle(
                     `weather forecast for ${current.observationpoint.toLowerCase()}`
                 )
